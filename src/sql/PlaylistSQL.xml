@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="playlist">
+
+	<insert id="insertPlaylist" parameterType="PlaylistDTO">
+
+		INSERT INTO playlist VALUES (#{pl_videoId}, #{oc_num}, #{pl_title}, #{pl_duration}, #{m_num}, now())
+
+	</insert>
+
+	<select id="checkPlaylist" parameterType="PlaylistDTO" resultType="int">
+
+		SELECT count(*) FROM playlist WHERE pl_videoId = #{pl_videoId} AND oc_num = #{oc_num} ORDER BY pl_uploadTime DESC LIMIT 100
+
+	</select>
+
+	<select id="selectPlaylist" parameterType="PlaylistDTO" resultType="hashmap">
+
+		SELECT * FROM playlist WHERE oc_num = #{oc_num} ORDER BY pl_uploadTime DESC LIMIT 100
+
+	</select>
+
+	<delete id="deletePlaylist" parameterType="PlaylistDTO">
+
+		DELETE FROM playlist WHERE pl_videoId = #{pl_videoId} AND oc_num = #{oc_num}
+
+	</delete>
+
+	<delete id="deleteAllPlaylist" parameterType="PlaylistDTO">
+
+		DELETE FROM playlist WHERE m_num = #{m_num}
+
+	</delete>
+
+</mapper>

@@ -1,0 +1,114 @@
+body {
+	background-color: white;
+	background:
+		url(http://d1841mjet2hm8m.cloudfront.net/thumb-900/fr_1096/1620/95/93f39cb84d1ee37edf2624b7812838e5.jpg)
+		no-repeat center center fixed;
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.body {
+	
+}
+
+h1 {
+	font-size: 35px;
+	/* background: -webkit-linear-gradient(#7966FE, #F905FE);
+	background: -o-linear-gradient(#7966FE, #F905FE);
+	background: -moz-linear-gradient(#7966FE, #F905FE);
+	background: linear-gradient(#7966FE, #F905FE);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; */
+	/* font-weight: bolder; */
+	color: #5a88d0;
+	text-align: center;
+}
+
+p {
+	font-family: verdana;
+	font-size: 14px;
+}
+
+span {
+	font-family: verdana;
+	font-size: 12px;
+}
+
+.join {
+	opacity: 0.8;
+	background-color: #eeedf9;
+	position: relative;
+	margin: 30px auto;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 550px;
+	background: #fff;
+	border: 1px solid #DCDCDC;
+	padding: 30px 40px;
+}
+
+input[type=submit] {
+	opacity: 1.0;
+	position: absolute;
+	/*  bottom: 10px; */
+	left: 50%;
+	padding: 12px 94px;
+	background: #edebff;
+	border: 1px solid #d5dce6;
+	color: #7f7575;
+	border-radius: 5px;
+	font-size: 18px;
+	margin-left: -125px;
+	cursor: pointer;
+}
+/* .submitbutton:hover{
+		    background: #ba55d3;
+	} */
+input[type=submit]:hover {
+	font-color: #808080;
+}
+/*  div input[type=checkbox]{
+    margin-bottom: 30px;
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+   	padding: 11px 9px; 
+   	width:0%
+   	height:
+    border: 1px solid #BCBCBC;
+    font-size: 13px;
+} */
+div input[type=text] {
+	margin-bottom: 30px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 11px 9px;
+	width: 100%;
+	height: 40px;
+	border: 1px solid #BCBCBC;
+	font-size: 13px;
+}
+
+div input[type=password] {
+	margin-bottom: 30px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 11px 9px;
+	width: 49%;
+	height: 40px;
+	border: 1px solid #BCBCBC;
+	font-size: 13px;
+}
+
+select {
+	height: 40px;
+}
+
+.confirmId {
+	margin-top: -25px;
+}
+.m_phone{
+	width : 20%;
+}

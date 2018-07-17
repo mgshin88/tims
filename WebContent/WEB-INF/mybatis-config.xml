@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases >
+		<typeAlias type="tims.bean.LogonDataBean"  alias="memberDTO"/>
+		<typeAlias type="tims.bean.ChatingDTO" alias="chatingDTO"/>
+		<typeAlias type="tims.bean.genreDTO" alias="genreDTO"/>
+		<typeAlias type="tims.bean.PlaylistDTO" alias="PlaylistDTO"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="/sql/timsSQL.xml"/>
+		<mapper resource="/sql/memberSQL.xml"/>
+		<mapper resource="/sql/chatingSQL.xml"/>
+		<mapper resource="/sql/PlaylistSQL.xml"/>
+	</mappers>
+  	
+</configuration>

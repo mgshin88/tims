@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- myBatis는 nameSpace가 필수 -->
+<mapper namespace="index">
+	<select id="idCalls" resultType="String">
+	select m_id from member
+	</select>
+	
+	<select id="imgCalls" resultType="memberDTO" parameterType="String">
+	select m_id,m_profileimage from member where m_id=#{m_id}
+	</select>
+</mapper>

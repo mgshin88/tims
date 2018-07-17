@@ -1,0 +1,52 @@
+body {
+	background-color: #f5f4fb;
+}
+
+#container {
+	z-index: 10;
+	/* position: relative; */
+	padding-top: 90px;
+}
+
+.user {
+	background-color: #f5f4fb;
+}
+
+.userinfoma {
+	position: absolute;
+	margin-top: 3%;
+	margin-left: 30%;
+	display: inline-block;
+}
+
+.profileimage {
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+	width: 200px;
+	height: 200px;
+	vertical-align: middle;
+}
+
+.spann {
+	margin-left: 20%;
+}
+
+.divv {
+	display: inline-block;
+}
+input[type=button] {
+	border-radius:40px;
+	background-color : white;
+	border: 1px solid grey;
+	cursor:pointer;
+}
+input[type=button]:hover{
+	
+}
+.m_id{
+	display:table;
+	margin-left:20%;
+	font-size:17px;
+	max-width:100px;
+}

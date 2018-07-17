@@ -1,0 +1,577 @@
+div#viewLoading {
+	text-align: center;
+	padding-top: 70px;
+	background: #FFFFF0;
+	filter: alpha(opacity=60);
+	opacity: alpha*0.6;
+}
+
+.messenger_list_addChat {
+	height : 15%;
+	border-bottom : 1px solid #D5D8DC;
+}
+
+.messenger_list_AllchatContent {
+	width : 100%;
+	height : 100%;
+	display : table;
+}
+
+.messenger_list_Allchatleft {
+	width : 20%;
+	display : table-cell;
+	text-align: center;
+	vertical-align : middle;
+}
+
+.messenger_list_Allchatmiddle {
+	width : 60%;
+	padding-top : 3%;
+	display : table-cell;
+}
+
+.messenger_list_Allchatright {
+	width : 20%;
+	display : table-cell;
+}
+
+.messenger_list_thumbnail {
+	width : 65%;
+	border-radius : 100%;
+}
+
+.messenger_list_ocName {
+	font-size : 14px;
+	font-weight : bold;
+	display : inline-block;
+	padding-left : 3%;
+}
+
+.messenger_list_ocContent {
+	font-size : 12px;
+	padding-top : 2%;
+	display : block;
+	padding-left : 3%;
+}
+
+.messenger_list_ocNowMax {
+	font-size : 12px;
+	display : inline-block;
+	padding-left : 3%;
+}
+
+.messenger_list_g {
+	font-size : 12px;
+	display : block;
+}
+
+.messenger_list_AllinputButton {
+	background-color: #9676ff;
+    border: none;
+    color: white;
+    padding: 5% 10%;
+    margin-top : 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.messenger_list_create {
+	position: fixed;
+    background-color: white;
+    z-index: 100;
+    height: 4.5%;
+    width: 32%;
+    border-bottom: 1px solid #D5D8DC;
+}
+
+.messenger_list_view {
+	width: 100%;
+    height: 100%;
+    z-index: 200;
+    margin-top: 7%;
+}
+
+.messenger_list_createButton {
+	width : 100%;
+	height : 100%;
+	background-color: #9676ff;
+	border : none;
+    color: white;
+    cursor : pointer;
+    text-decoration : none;
+    font-size : 14px;
+}
+
+
+
+/* chatRoomAll.jsp */
+.chatRoomTop {
+	width : 100%;
+	height : 50px;
+	display : table;
+	text-align : center;
+	border-bottom : 1px solid #adadad;
+}
+
+.chatRoomTop_backbutton {
+	width : 15%;
+	display: table-cell;
+	vertical-align : middle;
+	font-size : 28px;
+	cursor : pointer;
+}
+
+.chatRoomTop_title {
+	width : 57%;
+	display : table-cell;
+	vertical-align : middle;
+	font-size : 20px;
+	font-weight : bold;
+	text-align : left;
+	cursor : pointer;
+}
+
+.chatRoomTop_searchAndmenulist {
+	width : 26.1%;
+	display : table-cell;
+	vertical-align : middle;
+	font-size : 28px;
+}
+
+.chatRoomTop_oc_name {
+	padding-left : 3%;
+}
+
+#messenger_view {
+	background-image : url('/TIMS/IMG/Ttalk-background.jpg');
+}
+
+.chatRoomTop_searchAndmenulist_tt {
+	width : 100%;
+	display : table;
+}
+
+.chatRoomTop_searchAndmenulist_tt div {
+	width : 46.9%;
+	height : 100%;
+	display : table-cell;
+	cursor : pointer;
+}
+
+.chatText {
+	width : 100%;
+	height : 100px;
+	border : none;
+	outline : none;
+	resize : none;
+	font-size : 12px;
+	box-sizing : border-box;
+	padding-left : 2.5%;
+	padding-right : 2.5%;
+	padding-top : 2.5%;
+	padding-bottom : 2.5%;
+}
+
+.sendButton {
+	background-color: #9676ff;
+    border: 1px solid #D5D5D5;
+    color: white;
+    padding : 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    width : 70%;
+    height : 100%;
+}
+
+.chatRoomBottom_chatinput {
+	position : absolute;
+	width : 100%;
+	height : 100px;
+	background-color : #ffffff;
+	top : 86.8%;
+	display : flex;
+}
+
+.chatRoomBottom_chating {
+	width : 80%;
+	display : table-cell;
+}
+
+.chatRoomBottom_chatSendAndEtc {
+	width : 20%;
+	display : table-cell;
+}
+
+.chatRoomBottom_chatSend {
+	width : 100%;
+	height : 40%;
+	text-align : center;
+	margin-top : 10%;
+}
+
+.chatRoomBottom_chatEtc {
+	width : 100%;
+	height : 50%;
+	display : table;
+}
+
+.chatRoomBottom_chatEtc div {
+	width: 45%;
+    height: 100%;
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor : pointer;
+}
+
+.chatRoomMemImg {
+	width : 50px;
+	border-radius : 100%;
+	vertical-align : text-top;
+}
+
+.chatMsg {
+	display : flex;
+	clear : both;
+	float : left;
+	max-width : 80%;
+	padding-left : 1.5%;
+	padding-top : 1%;
+	padding-bottom : 1%;
+}
+
+.chatMsg_profile {
+	display : table-cell;
+}
+
+.chatMsg_nameAndContent {
+	display : table-cell;
+}
+
+.requestimgStatus {
+	max-width : 300px;
+	max-height : 300px;
+}
+
+.balloon {position:relative; display:inline-block;}
+.balloon.test_3 span {display:inline-block; padding:8px; color:#080808; background:#ffffff; border-radius:15px; word-break:break-all;}
+.balloon.test_4 span {display:inline-block; padding:8px; color:#080808; background:#edff00; border-radius:15px; word-break:break-all;}
+
+.balloon:after {content:''; position:absolute; width:0; height:0; border-style:solid;}
+
+.balloon.test_3 {
+	left : 8px;
+}
+
+.balloon.test_4 {
+	right : 8px;
+}
+
+.balloon.test_3:after,
+.balloon.test_4:after {border-width:10px 15px; top:10%;}
+
+.balloon.test_3:after {border-color:transparent #ffffff transparent transparent; left:-22px;}
+.balloon.test_4:after {border-color:transparent transparent transparent #edff00; right:-22px;}
+
+#msgs {
+	width : 100%;
+	height : 63.5%;
+	overflow-y : scroll;
+}
+
+.mychatMsg {
+	display : flex;
+	clear : both;
+	float : right;
+	text-align : right;
+	max-width : 85%;
+	padding-right : 1.5%;
+	padding-top : 1%;
+	padding-bottom : 1%;
+}
+
+.mychatMsg_nameAndContent {
+	display : table-cell;
+}
+
+.mychatMsg_profile {
+	display : table-cell;
+}
+
+.mychatName {
+	padding-right : 8px;
+}
+
+.youchatName {
+	padding-left : 8px;
+}
+
+.Msgs_search {
+	width : 32%;
+	height : 5%;
+	box-sizing : border-box;
+	background-color : #B5CEFD;
+	display : none;
+	position : fixed;
+	z-index : 100;
+}
+
+.Msgs_searchText {
+	display : table-cell;
+	width : 93%;
+	height: 100%;
+	vertical-align : middle;
+	text-align : center;
+}
+
+.chatRoom_searchText {
+	width : 95%;
+	height: 60%;
+	padding-left : 1.5%;
+	box-sizing : border-box;
+}
+
+.Msgs_searchClose {
+	width : 7%;
+	display : table-cell;
+	vertical-align : middle;
+	cursor : pointer;
+}
+
+
+/* 채팅방 추가 메뉴 CSS */
+.chatRoomAddmenu {
+	position : absolute;
+	width: 85%;
+    height: 76.7%;
+    margin-left: 100%;
+    box-sizing: border-box;
+    z-index: 300;
+    background-color: #FFFFFF;
+    border-left: 1px solid #D5D8DC;
+    border-bottom: 1px solid #D5D8DC;
+    display : none;
+    font-size : 14px;
+}
+
+.chatRoomAddmenu_top {
+	width: 100%;
+    height: 6.7%;
+    display: table;
+    border-bottom: 1px solid #D5D8DC;
+    background-color : #f1f1f1;
+}
+
+.chatRoomAddmenu_topleft {
+	width: 85%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left : 3%;
+}
+
+.chatRoomAddmenu_topright {
+	width: 15%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align : center;
+    cursor : pointer;
+}
+
+.chatRoomAddmenu_menubar {
+	width: 100%;
+    height: 8.9%;
+    display: table;
+    border-bottom: 1px solid #D5D8DC;
+}
+
+.chatRoomAddmenu_menubarTalkpartner {
+	width: 25%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #D5D8DC;
+    background-color : #dbb5ff; 
+    cursor : pointer;
+}
+
+.chatRoomAddmenu_menubarNotice {
+	width: 25%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #D5D8DC;
+    cursor : pointer;
+}
+
+.chatRoomAddmenu_menubarPicture {
+	width: 25%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    border-right: 1px solid #D5D8DC;
+    cursor : pointer;
+}
+
+.chatRoomAddmenu_menubarVideo {
+	width: 25%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor : pointer;
+}
+
+.chatRoomAddmenu_content {
+	width : 100%;
+	height : 84.4%;
+	overflow-y : scroll;
+	box-sizing : border-box;
+	padding-left : 1%;
+	padding-top : 1%;
+}
+
+.chatRoomAll_addPeople {
+	width : 100%;
+	height : 100%;
+}
+
+.chatRoomAll_addPeopleText {
+	display : flex;
+	width : 100%;
+	height: 10%;
+	align-items : center;
+}
+
+.listViewDesign {
+	display : flex;
+	width: 100%;
+	height: 12%;
+	align-items : center;
+}
+
+.chatRoomAll_addPeopleSpan {
+	font-size : 14px;
+	padding-left : 1%;
+	font-weight : bold;
+}
+
+.PeopleList {
+	padding-left : 1%;
+}
+
+.PeopleListName {
+	padding-left : 1.5%;
+	font-size : 18px;
+	font-weight : bold;
+}
+
+
+/* chatRoomAllPicture.jsp */
+.chatRoomAddmenu_imgList_img {
+	width : 24%;
+	height : 24%;
+	cursor : pointer;
+}
+
+/* chatRoomAllVideo.jsp */
+.chatRoomAddmenu_videoList_img {
+	width : 48%;
+	height : 48%;
+	
+}
+
+/* chatRoomAllNotice.jsp */
+.chatRoomAll_noticeInput {
+	display : none;
+	width : 99%;
+	height : 12%;
+	border : 1px solid #e2e2e2;
+}
+
+.chatRoomAll_noticeCreateButton {
+	background-color: #9676ff;
+    border: 1px solid #D5D5D5;
+    color: white;
+    padding : 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius : 10px;
+    outline : none;
+}
+
+.chatRoomAll_noticebtn {
+	width : 99%;
+	text-align : right;
+	padding-bottom : 1.5%;
+	padding-right : 1%;
+	box-sizing : border-box;
+}
+
+.noticeText {
+	width : 85%;
+	height : 100%;
+	outline : none;
+	resize : none;
+	border : none;
+	box-sizing : border-box;
+	padding : 1.5% 1.5% 1.5% 1.5%;
+}
+
+.chatRoomAll_noticeSubmitButton {
+	width : 15%;
+	background-color: #9676ff;
+    border: 1px solid #D5D5D5;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius : 10px;
+    outline : none;
+}
+
+.noticeList {
+	text-align : left;
+}
+
+.noticeList ul {
+	border: 1px solid #ddd;
+    margin: 10px 30px 10px 10px;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.noticeList ul li:first-child {
+	border-bottom: 1px dotted #ddd;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.noticeSubject_id {
+	font-weight : bold;
+}
+
+.noticeSubject_regDate {
+	float : right;
+}
+
+
+/* Music Player*/
+.chatRoomBottom_musicPlayer {
+	height : 10%;
+	position : relative;
+}

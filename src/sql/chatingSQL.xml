@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chating"> <!--  ibatis는 네임스페이스 선택이지만 mybatis는 필수 --> <!--#{id} : 'java' 홑따옴표 포함,${id}는 칼럼에 포함가능 , 값은 #으로 넣는게 좋음 -->
+  	<!-- 전체 채팅방 출력 -->
+  	<select id="chatRoomAllList" resultType="chatingDTO">
+  		select oc.oc_num, oc.m_num, oc.oc_name, oc.g_num, oc.oc_thumbnail, oc.oc_content, oc.oc_max, oc.oc_now, g.g_type from openchat oc join genre g on oc.g_num = g.g_num
+  	</select>
+  	
+  	<!-- 채팅방 장르 리스트 출력 -->
+  	<select id="chatRoomGenre" resultType="genreDTO">
+  		select * from genre
+  	</select>
+  	
+  	<!-- 공개 채팅방 입장시 m_num 수정 -->
+  	<update id="joinchatRoom" parameterType="java.util.HashMap">
+  		update openchat set m_num = concat(m_num,',${m_num}') where oc_num=${oc_num}
+  	</update>
+  	
+  	<!-- 입장한 방의 정보 select -->
+  	<select id="openRoomMemSelect" resultType="chatingDTO" parameterType="int">
+  		select * from openchat where oc_num = #{oc_num}
+  	</select>
+  	
+  	<!-- 채팅방 개설 -->
+  	<insert id="chatRoomInsert" parameterType="chatingDTO">
+  		insert into openchat (m_num, oc_name, oc_content, g_num, oc_max, oc_thumbnail) values (#{m_num}, #{oc_name}, #{oc_content}, #{g_num}, #{oc_max}, #{oc_thumbnail})
+  	</insert>
+  	
+  	<!-- 최근에 개설된 방 번호를 찾음 (max로)-->
+  	<select id="selectRoomNum" resultType="String">
+  		select max(oc_num) from openchat
+  	</select>
+  	
+  	<!-- 채팅방에 필요한 자신의 정보 select -->
+  	<select id="selectMemOne" resultType="memberDTO" parameterType="int">
+  		select * from member where m_num = #{m_num}
+  	</select>
+  	
+  	<!-- 공개 채팅방 나갔을 시에 m_num 삭제 -->
+  	<update id="exitchatRoom" parameterType="java.util.HashMap">
+  		update openchat set m_num = replace(m_num, ',${m_num}', '') where oc_num = ${oc_num}
+  	</update>
+  	
+  	<!-- 방장이 나갔을 경우 방장 정보 변경 -->
+  	<update id="RoomOwnerReplace" parameterType="java.util.HashMap">
+  		update openchat set m_num = replace(m_num, '${beforeOwner}', '${afterOwner}') where oc_num = ${oc_num}
+  	</update>
+  	
+  	<!-- 현재 채팅방의 인원이 누군지 확인 -->
+  	<select id="chatRoomMemCount" resultType="String" parameterType="int">
+  		select m_num from openchat where oc_num = #{oc_num}
+  	</select> 
+  	
+  	<!-- 방 삭제 쿼리 문 -->
+  	<delete id="chatRoomDelete" parameterType="int">
+  		delete from openchat where oc_num = #{oc_num}
+  	</delete>
+  	
+  	<!-- 현재 방이 존재하는지? 존재하면 1반환, 아닐경우 0반환 -->
+  	<select id="chatRoomAllCount" resultType="int" parameterType="int">
+  		select count(*) from openchat where oc_num = #{oc_num}
+  	</select>
+  	
+  	<!-- split한 m_num 값을 하나씩 대입하여 아이디를 가져오는 함수 -->
+  	<select id="chatRoomAllTalkPeopleList" resultType="memberDTO" parameterType="String">
+  		select m_id, m_profileimage from member where m_num = #{m_num}
+  	</select>
+  	
+  	<!-- 채팅방 안에 뮤직플레이어에서 num값을 m_id로 변환하기 위한 sql문 -->
+  	<select id="selectM_name" resultType="String" parameterType="int">
+  		select m_name from member where m_num = #{m_num}
+  	</select>
+  	
+</mapper>

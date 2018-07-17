@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member"> <!--  ibatis는 네임스페이스 선택이지만 mybatis는 필수 --> <!--#{id} : 'java' 홑따옴표 포함,${id}는 칼럼에 포함가능 , 값은 #으로 넣는게 좋음 -->
+	<insert id="insertMember" parameterType="memberDTO"> <!-- 회원가입 -->
+		insert into member(m_id,m_passwd,m_name,m_phone,m_email,m_genre) values(#{m_id},#{m_passwd},#{m_name},#{m_phone},#{m_email},#{m_genre})
+	</insert>
+  	
+  	<select id="userCheck" resultType="int" parameterType="memberDTO"><!-- 로그인 -->
+  		select count(*) from member where m_id=#{m_id} and m_passwd=#{m_passwd}
+  	</select>
+  	
+  	<select id="confirmId" resultType="int" parameterType="String"><!-- 아이디 중복여부 -->
+  		select count(*) from member where m_id=#{m_id}
+  	</select>
+  	
+  	<select id="memberId" resultType="memberDTO" parameterType="String"> <!-- 회원정보불러오기 -->
+  		select * from member where m_id=#{m_id}
+  	</select>
+  	
+  	<select id="memsearch" resultType="memberDTO" parameterType="String"> <!-- 회원검색 -->
+  		select * from member
+  	</select>
+
+  	<update id="memberUpdate" parameterType="memberDTO"> <!-- 회원정보 수정 -->
+  		update member set m_email=#{m_email},m_intro=#{m_intro},m_phone=#{m_phone} where m_id=#{m_id}
+  	</update>
+  	
+  	<update id="imageUpdate" parameterType="memberDTO"><!-- 이미지 수정 -->
+  		update member set m_profileimage=#{m_profileimage} where m_id=#{m_id}
+  	</update>
+  	
+  	<update id="pwUpdate" parameterType="memberDTO">
+  		update member set m_passwd=#{m_passwd} where m_id=#{m_id}
+  	</update>
+  	
+  	<select id="delMem" parameterType="String">
+  		delete from member where m_id=#{m_id}
+  	</select>
+  	
+  	<select id="selectM_num" resultType="int" parameterType="String">
+  		select m_num from member where m_id=#{m_id}
+  	</select>
+  	<!-- <select id="selectIfEx">
+  		select * from member
+  		<trim prefix="WHERE" prefixOverrides="AND |OR">
+  			<where>
+  				<if test="id !=null">id = #{id}</if>
+  				<if test="passwd !=null">and passwd=#{passwd}</if>
+  			</where>
+  		</trim>
+  	</select> -->
+  	
+</mapper>
